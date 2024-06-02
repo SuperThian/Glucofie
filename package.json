@@ -1,0 +1,18 @@
+{
+  "name": "glucofie-api",
+  "version": "1.0.0",
+  "main": "src/server/server.js",
+  "scripts": {
+    "start": "CHOKIDAR_USEPOLLING=true nodemon src/server/server.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.1",
+    "@tensorflow/tfjs-node": "^3.8.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
