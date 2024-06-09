@@ -31,7 +31,7 @@ Welcome to the Glucofie Web Service API documentation. This API provides endpoin
 
 **Screenshot Testing**
 
-![Screenshot](screenshot.png)
+![Screenshot](https://drive.google.com/uc?export=view&id=1OvQ3MXxFe9Io-CrtAKZExCyB8epj4btC)
 
 ### 2. Login
 
@@ -58,7 +58,7 @@ Welcome to the Glucofie Web Service API documentation. This API provides endpoin
 ```
 **Screenshot Testing**
 
-![Screenshot](screenshot.png)
+![Screenshot](https://drive.google.com/uc?export=view&id=1cp8zrlxrChBR0kH4ys0mRlJzYALyU8ej)
 
 ## Non-Public API Endpoints
 
