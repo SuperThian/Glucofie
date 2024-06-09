@@ -11,12 +11,9 @@ const storeScanData = async (userId, sugarContent) => {
 };
 
 const getUserScanHistory = async (userId) => {
-  const scans = await firestore.collection('scans')
-    .where('userId', '==', userId)
-    .orderBy('timestamp', 'desc')
-    .get();
+  const scans = await firestore.collection('scans').where('userId', '==', userId).orderBy('timestamp', 'desc').get();
 
-  return scans.docs.map(doc => doc.data());
+  return scans.docs.map((doc) => doc.data());
 };
 
 module.exports = {
