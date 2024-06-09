@@ -86,7 +86,7 @@ Authorization: Bearer <token>
 
 **Screenshot Testing**
 
-![Screenshot](screenshot.png)
+![Screenshot](https://drive.google.com/uc?export=view&id=1Uhh9EWLY71D1VkBTyREvlU5f6cy6vzx9)
 
 ### 2. Get All Users
 
@@ -114,7 +114,7 @@ Authorization: Bearer <token>
 
 **Screenshot Testing**
 
-![Screenshot](screenshot.png)
+![Screenshot](https://drive.google.com/uc?export=view&id=1K3yDxUyArpNvFFR515eJ7J-gpiQTpm3z)
 
 ### 3. Update User by ID
 
@@ -154,7 +154,7 @@ Authorization: Bearer <token>
 
 **Screenshot Testing**
 
-![Screenshot](screenshot.png)
+![Screenshot](https://drive.google.com/uc?export=view&id=1C-888dxuQSjLQMsQkxPZ4bKTr0Yj-0QM)
 
 
 ## How to Use
