@@ -1,43 +1,54 @@
-const { inferenceService, loadModel } = require('../services/inferenceService');
-const { storeScanData, getUserScanHistory } = require('../services/storeData');
-const InputError = require('../exceptions/InputError');
+const { inferenceService, loadModel } = require("../services/inferenceService");
+const {
+  storeData,
+  getUserScanHistory,
+  getPredictionsFromFirestore,
+} = require("../services/storeData");
+const InputError = require("../exceptions/InputError");
+const crypto = require("crypto");
 
 let model;
 
-loadModel().then(loadedModel => {
-  model = loadedModel;
-  console.log('Model loaded successfully');
-}).catch(err => {
-  console.error('Error loading model', err);
-});
-
-const interpretScore = (score) => {
-  if (score >= 0 && score <= 3) {
-    return 'Aman';
-  } else if (score >= 4 && score <= 6) {
-    return 'Risiko Rendah';
-  } else if (score >= 7 && score <= 9) {
-    return 'Risiko Sedang';
-  } else if (score >= 10 && score <= 12) {
-    return 'Risiko Tinggi';
-  } else {
-    throw new InputError('Invalid score range');
-  }
-};
+loadModel()
+  .then((loadedModel) => {
+    model = loadedModel;
+    console.log("Model loaded successfully");
+  })
+  .catch((err) => {
+    console.error("Error loading model", err);
+  });
 
 const scanHandler = async (req, res) => {
   try {
-    const { imageData, userId } = req.body;
-    if (!imageData || !userId) throw new InputError('Missing required fields');
+    const { imageData, userId, diabeticProfile } = req.body;
+    if (!imageData || !userId || !diabeticProfile)
+      throw new InputError("Missing required fields");
 
-    const sugarContent = await inferenceService(model, imageData);
-    const riskClassification = interpretScore(sugarContent);
-    const scanData = await storeScanData(userId, sugarContent);
+    const { label, sugarContent } = await inferenceService(
+      model,
+      imageData,
+      diabeticProfile
+    );
+    const id = crypto.randomUUID();
+    const createdAt = new Date().toISOString();
+
+    const scanData = {
+      id,
+      userId,
+      result: label,
+      sugarContent,
+      suggestion:
+        label === "Good" ? "Safe to consume." : "Not safe to consume.",
+      createdAt,
+      diabeticProfile,
+    };
+
+    await storeData(id, scanData);
 
     res.status(200).json({
-      sugarContent,
-      riskClassification,
-      scanData,
+      status: "success",
+      message: "Nutrition facts analyzed successfully",
+      data: scanData,
     });
   } catch (error) {
     handleError(res, error);
@@ -47,21 +58,32 @@ const scanHandler = async (req, res) => {
 const historyHandler = async (req, res) => {
   try {
     const { userId } = req.params;
-    if (!userId) throw new InputError('Missing userId parameter');
+    if (!userId) throw new InputError("Missing userId parameter");
 
     const scanHistory = await getUserScanHistory(userId);
-    res.status(200).json(scanHistory);
+    const predictions = await getPredictionsFromFirestore();
+
+    const data = predictions.map((prediction) => ({
+      id: prediction.id,
+      history: prediction,
+    }));
+
+    res.status(200).json({
+      status: "success",
+      scanHistory,
+      predictionHistories: data,
+    });
   } catch (error) {
     handleError(res, error);
   }
 };
 
 const handleError = (res, error) => {
-  if (error instanceof ClientError) {
-    res.status(error.statusCode).send(error.message);
+  if (error instanceof InputError) {
+    res.status(400).send(error.message);
   } else {
-    console.error('Internal server error', error);
-    res.status(500).send('Internal Server Error');
+    console.error("Internal server error", error);
+    res.status(500).send("Internal Server Error");
   }
 };
 
