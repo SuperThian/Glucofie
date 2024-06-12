@@ -2,7 +2,7 @@ const tf = require("@tensorflow/tfjs-node");
 const loadModel = require("./loadModel");
 const InputError = require("../exceptions/InputError");
 
-const calculateScore = (nutrition, diabeticProfile) => {
+const calculateScore = (nutrition) => {
   const {
     "Lemak Total": fat,
     Protein: protein,
