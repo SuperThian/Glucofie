@@ -24,11 +24,15 @@ const scanHandler = async (req, res) => {
     if (!imageData || !userId || !diabeticProfile)
       throw new InputError("Missing required fields");
 
-    const { label, sugarContent } = await inferenceService(
-      model,
-      imageData,
-      diabeticProfile
-    );
+    const {
+      label,
+      totalScore,
+      sugarScore,
+      carbScore,
+      proteinScore,
+      fatScore,
+      suggestion,
+    } = await inferenceService(model, imageData, diabeticProfile);
     const id = crypto.randomUUID();
     const createdAt = new Date().toISOString();
 
@@ -36,9 +40,12 @@ const scanHandler = async (req, res) => {
       id,
       userId,
       result: label,
-      sugarContent,
-      suggestion:
-        label === "Good" ? "Safe to consume." : "Not safe to consume.",
+      totalScore,
+      sugarScore,
+      carbScore,
+      proteinScore,
+      fatScore,
+      suggestion,
       createdAt,
       diabeticProfile,
     };
