@@ -4,7 +4,11 @@ const { createUser, getUserByEmail, getUserById, getAllUser, updateUser } = requ
 require('dotenv').config();
 
 const register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, confirmPassword } = req.body;
+
+  if (password !== confirmPassword) {
+    return res.status(400).json({ error: true, message: 'Passwords do not match' });
+  }
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -19,9 +23,9 @@ const register = async (req, res) => {
 
     const userId = await createUser(newUser);
 
-    res.status(201).json({ id: userId, message: 'User registered successfully' });
+    res.status(201).json({ error: false, message: 'User registered successfully' });
   } catch (error) {
-    res.status(500).send('Error registering user: ' + error.message);
+    res.status(500).json({ error: true, message: 'Error registering user: ' + error.message });
   }
 };
 
@@ -31,18 +35,27 @@ const login = async (req, res) => {
   try {
     const user = await getUserByEmail(email);
     if (!user) {
-      return res.status(400).send('User not found');
+      return res.status(400).json({ error: true, message: 'User not found' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).send('Invalid credentials');
+      return res.status(400).json({ error: true, message: 'Invalid credentials' });
     }
 
     const token = jwt.sign({ id: user.id, username: user.username, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ id: user.id, username: user.username, email: user.email, token });
+    res.json({
+      error: false,
+      message: 'Login Success',
+      loginResult: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        token,
+      },
+    });
   } catch (error) {
-    res.status(500).send('Error logging in: ' + error.message);
+    res.status(500).json({ error: true, message: 'Error logging in: ' + error.message });
   }
 };
 
