@@ -1,14 +1,9 @@
-const tf = require("@tensorflow/tfjs-node");
-const loadModel = require("./loadModel");
-const InputError = require("../exceptions/InputError");
+const tf = require('@tensorflow/tfjs-node');
+const loadModel = require('./loadModel');
+const InputError = require('../exceptions/InputError');
 
 const calculateScore = (nutrition) => {
-  const {
-    "Lemak Total": fat,
-    Protein: protein,
-    "Karbohidrat Total": carbs,
-    Gula: sugar,
-  } = nutrition;
+  const { 'Lemak Total': fat, Protein: protein, 'Karbohidrat Total': carbs, Gula: sugar } = nutrition;
 
   let sugarScore = 0;
   if (sugar < 1) sugarScore = 0;
@@ -35,13 +30,13 @@ const calculateScore = (nutrition) => {
 
   let label;
   if (totalScore <= 3) {
-    label = "Aman";
+    label = 'Aman';
   } else if (totalScore <= 6) {
-    label = "Risiko Rendah";
+    label = 'Risiko Rendah';
   } else if (totalScore <= 9) {
-    label = "Risiko Sedang";
+    label = 'Risiko Sedang';
   } else {
-    label = "Risiko Tinggi";
+    label = 'Risiko Tinggi';
   }
 
   return { label, totalScore, sugarScore, carbScore, proteinScore, fatScore };
@@ -49,35 +44,26 @@ const calculateScore = (nutrition) => {
 
 const inferenceService = async (model, imageData, diabeticProfile) => {
   try {
-    const imageTensor = tf.node
-      .decodeImage(Buffer.from(imageData, "base64"))
-      .resizeNearestNeighbor([224, 224])
-      .expandDims()
-      .toFloat();
+    const imageTensor = tf.node.decodeImage(Buffer.from(imageData, 'base64')).resizeNearestNeighbor([224, 224]).expandDims().toFloat();
 
     const prediction = model.predict(imageTensor);
     const nutrition = await prediction.data();
 
-    const { label, totalScore, sugarScore, carbScore, proteinScore, fatScore } =
-      calculateScore(nutrition, diabeticProfile);
+    const { label, totalScore, sugarScore, carbScore, proteinScore, fatScore } = calculateScore(nutrition, diabeticProfile);
 
     let suggestion;
     switch (label) {
-      case "Aman":
-        suggestion =
-          "Aman untuk dikonsumsi oleh semua orang, termasuk penderita diabetes.";
+      case 'Aman':
+        suggestion = 'Aman untuk dikonsumsi oleh semua orang, termasuk penderita diabetes.';
         break;
-      case "Risiko Rendah":
-        suggestion =
-          "Dapat dikonsumsi oleh penderita diabetes dengan pengawasan dokter atau ahli gizi. Konsumsi secukupnya dan perhatikan batasan gula harian.";
+      case 'Risiko Rendah':
+        suggestion = 'Dapat dikonsumsi oleh penderita diabetes dengan pengawasan dokter atau ahli gizi. Konsumsi secukupnya dan perhatikan batasan gula harian.';
         break;
-      case "Risiko Sedang":
-        suggestion =
-          "Tidak direkomendasikan untuk penderita diabetes, kecuali atas konsultasi dan pengawasan ketat dari dokter atau ahli gizi.";
+      case 'Risiko Sedang':
+        suggestion = 'Tidak direkomendasikan untuk penderita diabetes, kecuali atas konsultasi dan pengawasan ketat dari dokter atau ahli gizi.';
         break;
-      case "Risiko Tinggi":
-        suggestion =
-          "Tidak dianjurkan untuk dikonsumsi oleh penderita diabetes karena kandungan gula yang tinggi dapat meningkatkan risiko komplikasi.";
+      case 'Risiko Tinggi':
+        suggestion = 'Tidak dianjurkan untuk dikonsumsi oleh penderita diabetes karena kandungan gula yang tinggi dapat meningkatkan risiko komplikasi.';
         break;
     }
 
