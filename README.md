@@ -2,8 +2,8 @@
 
 Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, and user data management.
 
-##Progress Weeks 4 
-##Testing API For machine Learning
+
+##Testing API For machine Learning (Progress Weeks 4)
 **Endpoint:** `POST https://webservice-glucofie.vercel.app/api/detect-nutrition`
 **Request Body:**
 
