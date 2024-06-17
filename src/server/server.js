@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const loadModel = require('../services/loadModel');
@@ -35,3 +34,5 @@ initializeModel()
   .catch((error) => {
     console.error('Failed to initialize server:', error);
   });
+
+module.exports = app;

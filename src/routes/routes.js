@@ -1,14 +1,15 @@
 const express = require('express');
-const { scanHandler, historyHandler } = require('./handler');
-// const authMiddleware = require('../middleware/authMiddleware');
+const { scanHandler } = require('../controllers/modelController');
 const { getUser, getAllUsers, updateUserById } = require('../controllers/authController');
+const upload = require('../services/multerService');
+
 const router = express.Router();
 
 // router.use(authMiddleware);
 router.get('/users/:id', getUser);
 router.get('/users', getAllUsers);
 router.patch('/users/:id', updateUserById);
-// router.post('/scan', scanHandler);
-// router.get('/history/:userId', historyHandler);
+// Handler untuk deteksi informasi gizi dari gambar
+router.post('/detect-nutrition', upload.single('image'), scanHandler);
 
 module.exports = router;
