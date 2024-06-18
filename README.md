@@ -3,34 +3,6 @@
 Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, and user data management.
 
 
-## Testing API For machine Learning (Progress Weeks 4)
-**Endpoint:** `POST https://webservice-glucofie.vercel.app/api/detect-nutrition`
-**Request Body:**
-
-```json
-{
-  "images": "image.png",
-}
-
-```
-
-**Response:**
-```json
-{
-  "boundingBox" : "koordinat bounding box"
-}
-
-```
-
-**Screenshot Testing**
-
-![Screenshot](https://drive.google.com/uc?export=view&id=1imyE65pdjY0hAvXIjMN-mAftWLPSbCf3)
-
-**Screenshot Bucket**
-![Screenshot](https://drive.google.com/uc?export=view&id=17YPTS3ZIyTr_zLf-Jwya3b8tRkVfM7cS)
-
-**Screenshot Coding**
-![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
 
 
@@ -189,6 +161,37 @@ Authorization: Bearer <token>
 **Screenshot Testing**
 
 ![Screenshot](https://drive.google.com/uc?export=view&id=1C-888dxuQSjLQMsQkxPZ4bKTr0Yj-0QM)
+
+## Testing API For machine Learning (Progress Weeks 4)
+### 4. Scan Nutrition
+**Endpoint:** `POST http://34.101.56.125:3000/api/detect-nutrition`
+**Request Body:**
+
+```json
+{
+  "images": "image.png",
+}
+
+```
+
+**Response:**
+```json
+{
+    "error": false,
+    "message": "Scan Success"
+}
+
+```
+
+**Screenshot Testing**
+
+![Screenshot](https://drive.google.com/uc?export=view&id=1imyE65pdjY0hAvXIjMN-mAftWLPSbCf3)
+
+**Screenshot Bucket**
+![Screenshot](https://drive.google.com/uc?export=view&id=17YPTS3ZIyTr_zLf-Jwya3b8tRkVfM7cS)
+
+**Screenshot Coding**
+![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
 
 ## How to Use
