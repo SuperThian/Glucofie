@@ -2,6 +2,11 @@
 
 Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, and user data management.
 
+update progress Week 4: 
+- Membuat service api untuk machine learning
+- Hosting api ke cloud
+- Fix bug login register
+- Testing APi
 
 
 
