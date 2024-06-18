@@ -1,22 +1,32 @@
 const db = require('../utils/firestore');
 
-const storeData = async (id, data) => {
+const storeData = async (result, userId, suggestion) => {
+  const data = {
+    result,
+    suggestion,
+    userId,
+    timestamp: new Date(),
+  };
   const dataRef = db.collection('data').doc();
   data.id = dataRef.id;
   await dataRef.set(data);
-  return data.id;
+  return data;
 };
 
-const getPrediction = async (id) => {
-  const dataRef = db.collection('data').doc(id);
+getResultByUserId = async (userId) => {
+  const dataRef = db.collection('data').where('userId.id', '==', userId);
   const snapshot = await dataRef.get();
-  if (!snapshot.exists) {
+  if (snapshot.empty) {
     return null;
   }
-  return snapshot.data();
+  const data = [];
+  snapshot.forEach((doc) => {
+    data.push({ id: doc.id, ...doc.data() });
+  });
+  return data;
 };
 
 module.exports = {
   storeData,
-  getPrediction,
+  getResultByUserId,
 };

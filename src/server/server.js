@@ -23,12 +23,13 @@ const initializeModel = async () => {
 initializeModel()
   .then(() => {
     // Setelah model dimuat, pasang rute publik dan rute lainnya
-    app.use('/api/public', routesPublic);
+    app.use('/api', routesPublic);
     app.use('/api', routes);
 
     const port = process.env.PORT || 3000;
-    app.listen(port, () => {
-      console.log(`Server running at http://localhost:${port}/`);
+    const host = '0.0.0.0';
+    app.listen(port, host, () => {
+      console.log(`Server running at http://${host}:${port}/`);
     });
   })
   .catch((error) => {

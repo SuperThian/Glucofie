@@ -61,7 +61,67 @@ const resultData = (cleanedText) => {
   return nutritional_info;
 };
 
+const nutritionClassification = (result_nutrition) => {
+  const classifyNutrient = (value, thresholds) => {
+    for (let i = thresholds.length - 1; i >= 0; i--) {
+      if (value > thresholds[i].max) return thresholds[i + 1].score;
+      if (value >= thresholds[i].min) return thresholds[i].score;
+    }
+    return thresholds[0].score;
+  };
+
+  const thresholds = {
+    Gula: [
+      { score: 0, min: 0, max: 0.99 },
+      { score: 1, min: 1, max: 5 },
+      { score: 2, min: 5.01, max: 10 },
+      { score: 3, min: 10.01, max: Infinity },
+    ],
+    Protein: [
+      { score: 0, min: 0, max: 9.99 },
+      { score: 1, min: 10, max: 20 },
+      { score: 2, min: 20.01, max: Infinity },
+    ],
+    'Lemak Total': [
+      { score: 0, min: 0, max: 2.99 },
+      { score: 1, min: 3, max: 10 },
+      { score: 2, min: 10.01, max: Infinity },
+    ],
+    'Karbohidrat Total': [
+      { score: 0, min: 0, max: 24.99 },
+      { score: 1, min: 25, max: 50 },
+      { score: 2, min: 50.01, max: Infinity },
+    ],
+  };
+
+  const scores = {
+    Gula: classifyNutrient(result_nutrition['Gula'], thresholds['Gula']),
+    Protein: classifyNutrient(result_nutrition['Protein'], thresholds['Protein']),
+    'Lemak Total': classifyNutrient(result_nutrition['Lemak Total'], thresholds['Lemak Total']),
+    'Karbohidrat Total': classifyNutrient(result_nutrition['Karbohidrat Total'], thresholds['Karbohidrat Total']),
+  };
+
+  const totalScore = scores['Gula'] + scores['Protein'] + scores['Lemak Total'] + scores['Karbohidrat Total'];
+
+  let interpretation;
+
+  if (totalScore >= 0 && totalScore <= 3) {
+    interpretation = 'Aman untuk dikonsumsi oleh semua orang, termasuk penderita diabetes.';
+  } else if (totalScore >= 4 && totalScore <= 6) {
+    interpretation = 'Risiko Rendah: Dapat dikonsumsi oleh penderita diabetes dengan pengawasan dokter atau ahli gizi. Konsumsi secukupnya dan perhatikan batasan gula harian.';
+  } else if (totalScore >= 7 && totalScore <= 9) {
+    interpretation = 'Risiko Sedang: Tidak direkomendasikan untuk penderita diabetes, kecuali atas konsultasi dan pengawasan ketat dari dokter atau ahli gizi.';
+  } else if (totalScore >= 10 && totalScore <= 12) {
+    interpretation = 'Risiko Tinggi: Tidak dianjurkan untuk dikonsumsi oleh penderita diabetes karena kandungan gula yang tinggi dapat meningkatkan risiko komplikasi.';
+  } else {
+    interpretation = 'Invalid score';
+  }
+
+  return interpretation;
+};
+
 module.exports = {
   cleaned_string,
   resultData,
+  nutritionClassification,
 };

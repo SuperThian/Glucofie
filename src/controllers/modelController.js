@@ -2,11 +2,13 @@ const tf = require('@tensorflow/tfjs-node');
 const fs = require('fs');
 const path = require('path');
 const extractTextFromImage = require('../services/ocrServices');
-const { cleaned_string, resultData } = require('../services/dataService');
+const { cleaned_string, resultData, nutritionClassification } = require('../services/dataService');
+const { storeData, getResultByUserId } = require('../models/dataModel');
+const { error } = require('console');
 
 const scanHandler = async (req, res) => {
   try {
-    const { image } = req.body;
+    const userId = req.user;
 
     // Pastikan ada file yang di-upload
     if (!req.file) {
@@ -57,14 +59,37 @@ const scanHandler = async (req, res) => {
     // result
     const result = resultData(cleanedText);
 
+    // nutrition klasifikasi
+    const resultNutrition = nutritionClassification(result);
+
+    // store data
+    const dataScan = await storeData(result, userId, resultNutrition);
+
     // Kirim Response text
-    res.status(200).json({ OcrText: result, text: text });
+    res.status(200).json({
+      error: false,
+      message: 'Scan Success',
+    });
   } catch (error) {
     console.error('Error detecting nutrition:', error);
     res.status(500).json({ error: 'Failed to detect nutrition information' });
   }
 };
 
+const getResult = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const data = await getResultByUserId(userId);
+    if (!data) {
+      return res.status(404).send('Data not found');
+    }
+    res.json(data);
+  } catch (error) {
+    res.status(500).send('Error getting data: ' + error.message);
+  }
+};
+
 module.exports = {
   scanHandler,
+  getResult,
 };
