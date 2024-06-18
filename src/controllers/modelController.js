@@ -4,7 +4,6 @@ const path = require('path');
 const extractTextFromImage = require('../services/ocrServices');
 const { cleaned_string, resultData, nutritionClassification } = require('../services/dataService');
 const { storeData, getResultByUserId } = require('../models/dataModel');
-const { error } = require('console');
 
 const scanHandler = async (req, res) => {
   try {
