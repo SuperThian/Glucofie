@@ -17,7 +17,7 @@ update progress Week 4:
 
 ### 1. Register a New User
 
-**Endpoint:** `POST https://webservice-glucofie.vercel.app/api/register`
+**Endpoint:** `POST http://34.101.56.125:3000/api/login`
 
 **Request Body:**
 
@@ -46,7 +46,7 @@ update progress Week 4:
 
 ### 2. Login
 
-**Endpoint:** `POST https://webservice-glucofie.vercel.app/api/login`
+**Endpoint:** `POST http://34.101.56.125:3000/api/register`
 
 **Request Body:**
 
@@ -77,7 +77,7 @@ update progress Week 4:
 
 ### 1. Get User by ID
 
-**Endpoint:** `GET https://webservice-glucofie.vercel.app/api/users/:id`
+**Endpoint:** `GET http://34.101.56.125:3000/api/users`
 
 **Headers:**
 Authorization: Bearer <token>
@@ -101,7 +101,7 @@ Authorization: Bearer <token>
 
 ### 2. Get All Users
 
-**Endpoint:** `GET https://webservice-glucofie.vercel.app/api/users`
+**Endpoint:** `GET http://34.101.56.125:3000/api/users:id`
 
 **Headers:**
 Authorization: Bearer <token>
@@ -129,7 +129,7 @@ Authorization: Bearer <token>
 
 ### 3. Update User by ID
 
-**Endpoint:** `PATCH https://webservice-glucofie.vercel.app/api/users/:id`
+**Endpoint:** `PATCH http://34.101.56.125:3000/api/users:id`
 
 **Headers:**
 Authorization: Bearer <token>
@@ -170,6 +170,10 @@ Authorization: Bearer <token>
 ## Testing API For machine Learning (Progress Weeks 4)
 ### 4. Scan Nutrition
 **Endpoint:** `POST http://34.101.56.125:3000/api/detect-nutrition`
+
+**Headers:**
+Authorization: Bearer <token>
+
 **Request Body:**
 
 ```json
@@ -198,6 +202,26 @@ Authorization: Bearer <token>
 **Screenshot Coding**
 ![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
+5. Result
+**Endpoint:** `POST http://34.101.56.125:3000/api/detect-nutrition`
+
+**Headers:**
+Authorization: Bearer <token>
+
+**Response:**
+
+```json
+[
+  {
+    "id": "string",
+    "username": "string",
+    "email": "string",
+    "type_diabetes": "string",
+    "gender": "string"
+  },
+  ...
+]
+```
 
 ## How to Use
 
