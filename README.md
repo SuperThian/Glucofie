@@ -203,7 +203,7 @@ Authorization: Bearer <token>
 ![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
 5. Result
-**Endpoint:** `POST http://34.101.56.125:3000/api/detect-nutrition`
+**Endpoint:** `POST http://34.101.56.125:3000/api/result`
 
 **Headers:**
 Authorization: Bearer <token>
