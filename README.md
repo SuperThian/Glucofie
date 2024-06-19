@@ -178,7 +178,7 @@ Authorization: Bearer <token>
 
 ```json
 {
-  "images": "image.png",
+  "image": "image.png",
 }
 
 ```
