@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Glucofie</string>
+    <string name="ready_to_start">You\'re now ready to start using Glucofie! Explore products, save your favorites, and get to make healthier choices.</string>
+    <string name="scan_tutorial_description">Tap the SCAN button and point your camera at the product\'s nutrition facts. Ensure the nutrition facts fits within the frame for an accurate scan.</string>
+    <string name="scan_button">SCAN</string>
+    <string name="Scan">Scan</string>
+    <string name="scan_sugar_levels">Scan your sugar levels</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account">Already Have an Account</string>
+    <string name="have_account"><u>I am already member</u></string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">OR</string>
+    <string name="new_member"><u>New Member? Create Account</u></string>
+    <string name="logout">Logout</string>
+    <string name="img_splashscreen">img_ss</string>
+    <string name="glucofie_result">GLUCOFIE RESULTS</string>
+    <string name="profile">Profile</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_history">History</string>
+    <string name="menu_logout">Logout</string>
+    <string name="quotes">Kesehatan adalah investasi terbaik untuk masa depan Anda</string>
+
+    <string-array name="gender">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="type_diabetes">
+        <item>Type 1</item>
+        <item>Normal</item>
+        <item>Gestational</item>
+    </string-array>
+
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="analyze">Analyze</string>
+    <string name="result">Hasil Analisis</string>
+    <string name="gula">Gula: </string>
+    <string name="carbo">Karbohidrat Total: </string>
+    <string name="protein">Protein: </string>
+    <string name="saran">Saran: </string>
+    <string name="lemak_total">Lemak Total: </string>
+    <string name="no_image">Pilih Gambar Terlebih dahulu Untuk di Analyze</string>
+    <string name="unselect_image">Silahkan Pilih Gambar</string>
+</resources>
