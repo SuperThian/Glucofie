@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        android:usesCleartextTraffic="true"
+        />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GlucofieApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.ScanTutorialActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name=".view.ScanActivity"
+            android:exported="false"
+            android:parentActivityName=".view.ScanTutorialActivity" />
+        <activity
+            android:name=".view.ResultActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name=".view.ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name=".view.HistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name=".view.RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".view.BaseActivity" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false"
+            android:parentActivityName=".view.BaseActivity" />
+        <activity
+            android:name=".view.BaseActivity"
+            android:exported="true" />
+        <activity android:name=".view.MainActivity" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.AppCompat"
+            />
+        <activity
+            android:name=".view.Splash_Screen"
+            android:exported="true"
+            android:theme="@style/Theme.GlucofieApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

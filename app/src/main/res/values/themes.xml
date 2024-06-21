@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GlucofieApp" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorButtonNormal">@color/primary_color</item>
+        <item name="colorOnBackground">@color/background_primary_color</item>
+    </style>
+
+    <style name="Theme.GlucofieApp" parent="Base.Theme.GlucofieApp" />
+
+    <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu" />
+
+    <style name="Theme.GlucofieApp.NoActionBar" parent="Theme.Material3.Light.NoActionBar"></style>
+
+    <style name="Theme.GlucofieApp.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <!-- Radius of the outer bound of widgets to make the rounded corners -->
+        <item name="appWidgetRadius">16dp</item>
+        <!--
+        Radius of the inner view's bound of widgets to make the rounded corners.
+        It needs to be 8dp or less than the value of appWidgetRadius
+        -->
+        <item name="appWidgetInnerRadius">8dp</item>
+    </style>
+
+    <style name="Theme.GlucofieApp.AppWidgetContainer" parent="Theme.GlucofieApp.AppWidgetContainerParent">
+        <!-- Apply padding to avoid the content of the widget colliding with the rounded corners -->
+        <item name="appWidgetPadding">16dp</item>
+    </style>
+    <style name="CropImageStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#6200EE</item> <!-- Replace with your desired color -->
+        <item name="colorPrimaryDark">#3700B3</item> <!-- Replace with your desired color -->
+        <item name="colorAccent">#03DAC5</item> <!-- Replace with your desired color -->
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+</resources>
