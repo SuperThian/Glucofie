@@ -1,19 +1,26 @@
 # Glucofie Web Service API
 
-Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, and user data management.
 
-update progress Week 4: 
+Update Progress Weeks 3 (3 Juni - 9 Juni 2024)
+- Menyelesaikan api login,register,profile
+- Hosting API di vercel untuk testing agar menghemat biaya
+- Menghubungkan ke firestore
+- Testing API
+
+Update progress Week 4 (10 Juni - 20 Juni 2024)
 - Membuat service api untuk machine learning
-- Hosting api ke cloud
-- Fix bug login register
-- Testing APi
+- Hosting api ke cloud menggunakan compute engine
+- Fix bug login dan register
+- Testing API
+- Semua endpoint API sudah selesai
 
 
 
 
-## Progress Weeks 3
+
+
+Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, user data management, and scanning image to text.
 ## Public API Endpoints
-
 
 ### 1. Register a New User
 
