@@ -1,18 +1,19 @@
 # Glucofie Web Service API
 
 
-Update Progress Weeks 3 (3 Juni - 9 Juni 2024)
-- Menyelesaikan api login,register,profile
-- Hosting API di vercel untuk testing agar menghemat biaya
-- Menghubungkan ke firestore
-- Testing API
+Update Progress Week 3 (June 3 - June 9, 2024)
+- Completed API endpoints for login, register, and profile.
+- Hosted API on Vercel for testing to reduce costs.
+- Connected API to Firestore.
+- Conducted API testing.
 
-Update progress Week 4 (10 Juni - 20 Juni 2024)
-- Membuat service api untuk machine learning
-- Hosting api ke cloud menggunakan compute engine
-- Fix bug login dan register
-- Testing API
-- Semua endpoint API sudah selesai
+Update Progress Week 4 (June 10 - June 20, 2024)
+
+- Developed API service for machine learning.
+- Hosted API on cloud using Compute Engine.
+- Fixed bugs in login and register functionalities.
+- Conducted API testing.
+- All API endpoints are now completed.
 
 ---
 
