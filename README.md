@@ -23,7 +23,7 @@ Welcome to the Glucofie Web Service API documentation. This API provides endpoin
 
 ### Development Team
 
-- **C006D4KY1154 – Ekmaldzaki Royhan Mahar Beta Adi Sucipto Universitas Brawijaya - Cloud Computing**
+- **C006D4KY1154 – Ekmaldzaki Royhan Mahar Beta Adi Sucipto - Universitas Brawijaya - Cloud Computing**
 - **C547D4NY1355 – Moh Hasbi Rizqulloh – UIN Sunan Gunung Djati Bandung - Cloud Computing**
 ## Public API Endpoints
 
