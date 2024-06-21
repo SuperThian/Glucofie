@@ -8,6 +8,22 @@ Team ID: C241-PS241
 | A009D4KY4555  | Kenny Corenthian  | Universitas Gunadarma  |
 | A325D4KX4088  | Lutfiana Sinta Lestari | Universitas Tarumanagara  |
 
+## Table Of Contents
+- [Table Of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Credits](#credits)
+- [Screenshots](#screenshots)
+  - [Landing Page](#landing-page)
+  - [Login and Register Page](#login-and-register-page)
+  - [Home Page](#home-page)
+  - [Profile Page](#profile-page)
+  - [Scan Page](#scan-page)
+  - [Result Page](#result-page)
+- [Contact](#contact)
+  
 ## Introduction
 Glucofie is a revolutionary mobile application designed to help users, especially those with diabetes, monitor their nutritional intake from packaged foods and beverages. This app allows users to easily scan nutritional information from product labels and provides detailed analysis of carbohydrate, protein, sugar, and fat content, along with recommendations on whether the product is safe for consumption by diabetics.
 
