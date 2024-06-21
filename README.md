@@ -14,12 +14,16 @@ Update progress Week 4 (10 Juni - 20 Juni 2024)
 - Testing API
 - Semua endpoint API sudah selesai
 
-
-
+---
 
 
 
 Welcome to the Glucofie Web Service API documentation. This API provides endpoints for user registration, login, user data management, and scanning image to text.
+
+### Development Team
+
+- **C006D4KY1154 – Ekmaldzaki Royhan Mahar Beta Adi Sucipto Universitas Brawijaya - Cloud Computing**
+- **C547D4NY1355 – Moh Hasbi Rizqulloh – UIN Sunan Gunung Djati Bandung - Cloud Computing**
 ## Public API Endpoints
 
 ### 1. Register a New User
@@ -203,14 +207,11 @@ Authorization: Bearer <token>
 
 ![Screenshot](https://drive.google.com/uc?export=view&id=1imyE65pdjY0hAvXIjMN-mAftWLPSbCf3)
 
-**Screenshot Bucket**
-![Screenshot](https://drive.google.com/uc?export=view&id=17YPTS3ZIyTr_zLf-Jwya3b8tRkVfM7cS)
-
 **Screenshot Coding**
 ![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
 5. Result
-**Endpoint:** `POST http://34.101.56.125:3000/api/result`
+**Endpoint:** `GET http://34.101.56.125:3000/api/result`
 
 **Headers:**
 Authorization: Bearer <token>
@@ -220,13 +221,21 @@ Authorization: Bearer <token>
 ```json
 [
   {
-    "id": "string",
-    "username": "string",
-    "email": "string",
-    "type_diabetes": "string",
-    "gender": "string"
-  },
-  ...
+        "id": "string",
+        "result": {
+            "Gula": int,
+            "Karbohidrat Total": int,
+            "Protein": int,
+            "Lemak Total": int
+        },
+        "suggestion": "string",
+        "userId": {
+            "type_diabetes": "string",
+            "id": "string",
+            "email": "string",
+            "username": "string"
+        }
+    }
 ]
 ```
 
@@ -262,6 +271,16 @@ Authorization: Bearer <token>
    npm start
    ```
 5. Use Postman or any API client to interact with the endpoints.
+
+
+## Deployment 
+**Screenshot Bucket**
+Machine Learning Model 
+![Screenshot](https://drive.google.com/uc?export=view&id=17YPTS3ZIyTr_zLf-Jwya3b8tRkVfM7cS)
+
+**Screenshot Compute Engine**
+Machine Learning Model 
+![Screenshot](https://drive.google.com/uc?export=view&id=1pyaGMJ6x-_tChypu9ZBpbr4Trrfd8Fr6)
 
 
 ## Contributing
