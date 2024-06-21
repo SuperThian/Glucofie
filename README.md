@@ -61,3 +61,11 @@ After detecting the nutritional information table, use OCR (Optical Character Re
 ## Model Conversion
 
 Convert the trained YoloV8 detection model to TensorFlow.Js format
+
+# Contact
+
+| Name                   | Contact                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Siti Nurhaliza     | <a href="https://www.linkedin.com/in/sitilizla/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  |
+| Azza Annathifa   | <a href="https://www.linkedin.com/in/azza-annathifa/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> |
+| Rizkiyatun Nafisah          | <a href="https://www.linkedin.com/in/rizkiyatun-nafisah-a1644b269/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>          |
