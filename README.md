@@ -206,10 +206,8 @@ Authorization: Bearer <token>
 
 **Screenshot Testing**
 
-![Screenshot](https://drive.google.com/uc?export=view&id=1imyE65pdjY0hAvXIjMN-mAftWLPSbCf3)
+![Screenshot](https://drive.google.com/uc?export=view&id=1V8C7seYIy99XmYGqrrECIcXEYfrSGVRS)
 
-**Screenshot Coding**
-![Screenshot](https://drive.google.com/uc?export=view&id=19sEPcVwF-yYLvBTxFrDRozv8pjWIknYa)
 
 5. Result
 **Endpoint:** `GET http://34.101.56.125:3000/api/result`
@@ -239,6 +237,10 @@ Authorization: Bearer <token>
     }
 ]
 ```
+
+**Screenshot Testing**
+
+![Screenshot](https://drive.google.com/uc?export=view&id=1wfAjNWGAcv-qRxgZnkGuCsTk8X4pyXoS)
 
 ## How to Use
 
