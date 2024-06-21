@@ -1,15 +1,15 @@
 # Glucofie - Machine Learning Path
-Bangkit 2024 Product-based Capstone
+Bangkit 2024 Batch 1 - Product-based Capstone
 
 Team ID: C241-PS241
 
-(ML) M006D4KX1798 – Azza Annathifa – Universitas Brawijaya
+| Student ID        | Nama            | Universitas           |
+|-------------|-----------------|-----------------------|
+| M006D4KX1798 | Azza Annathifa  | Universitas Brawijaya |
+| M180D4KX1858 | Rizkiyatun Nafisah | Universitas Airlangga |
+| M315D4KX2160 | Siti Nurhaliza  | Universitas Sriwijaya |
 
-(ML) M180D4KX1858 – Rizkiyatun Nafisah – Universitas Airlangga
-
-(ML) M315D4KX2160 – Siti Nurhaliza – Universitas Sriwijaya
-
-# Nutrition Label Detection and Extraction
+# Nutrition Table Detection and Extraction
 
 This project involves collecting packaging data that includes a nutrition table, performing data labeling using Roboflow, and augmenting the data to increase variability. A detection model is then created using YoloV8 with the collected dataset. Finally, the required values are extracted using OCR and regex, and the detection model is converted to TensorFlow.Js format.
 
@@ -20,6 +20,7 @@ This project involves collecting packaging data that includes a nutrition table,
 - [Data Labeling](#data-labeling)
 - [Data Augmentation](#data-augmentation)
 - [Model Training](#model-training)
+- [Model Evaluate](#model-evaluation)
 - [Value Extraction](#value-extraction)
 - [Model Conversion](#model-conversion)
 
@@ -46,6 +47,12 @@ To enhance the variability and robustness of the dataset, perform data augmentat
 ## Model Training
 
 Train a detection model using YoloV8 with the augmented dataset. YoloV8 is chosen for its high accuracy and performance in object detection tasks.
+
+## Model Evaluation
+
+Evaluation results of the model include precision, recall, loss, and mean Average Precision (mAP) for both training and validation datasets.
+
+![Model Evaluation Results](https://github.com/SuperThian/Glucofie/blob/ML/model/model%20evaluation/results.png)
 
 ## Value Extraction
 
