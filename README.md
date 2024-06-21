@@ -135,3 +135,4 @@ app
 
 ## Contact
 - **[Github](https://github.com/SuperThian)**
+- **[Linkedin](https://www.linkedin.com/in/kenny-corenthian-29a2822ba/)**
