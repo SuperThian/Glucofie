@@ -1,9 +1,12 @@
-<div align="center">
-  
-![Glucofie Logo](https://drive.google.com/uc?export=view&id=1lsEbW4fFje8a7cPCeMvy8YwzwJLmKgVA)
+# Glucofie - Mobile Development Path
+Bangkit 2024 Batch 1 - Product-based Capstone
 
-</div>
-<h1 align="center" id="title">Glucofie</h1>
+Team ID: C241-PS241
+
+| Student ID        | Nama            | Universitas           |
+|-------------|-----------------|-----------------------|
+| A009D4KY4555  | Kenny Corenthian  | Universitas Gunadarma  |
+| A325D4KX4088  | Lutfiana Sinta Lestari | Universitas Tarumanagara  |
 
 ## Introduction
 Glucofie is a revolutionary mobile application designed to help users, especially those with diabetes, monitor their nutritional intake from packaged foods and beverages. This app allows users to easily scan nutritional information from product labels and provides detailed analysis of carbohydrate, protein, sugar, and fat content, along with recommendations on whether the product is safe for consumption by diabetics.
@@ -35,7 +38,7 @@ Glucofie is a revolutionary mobile application designed to help users, especiall
 ## Installation
 1. To install the application, clone the repository using the following command: 
 ```
-git clone https://github.com/SuperThian/Glucofie/tree/frontend
+git clone -b frontend https://github.com/SuperThian/Glucofie.git
 ```
 
 ## Project Structure
@@ -74,8 +77,8 @@ app
 │            ├── ScanActivity
 │            ├── ScanTutorialActivity
 │            └── Splash_Screen
-├── com.android.carepet (androidTest)
-├── com.android.carepet (test)
+├── com.capstone.glucofie (androidTest)
+├── com.capstone.glucofie (test)
 ├── res
 │   ├── drawable
 │   ├── layout
