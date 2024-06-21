@@ -279,7 +279,7 @@ Authorization: Bearer <token>
 ## Deployment 
 **Screenshot Bucket**
 Machine Learning Model 
-![Screenshot](https://drive.google.com/uc?export=view&id=17YPTS3ZIyTr_zLf-Jwya3b8tRkVfM7cS)
+![Screenshot](https://drive.google.com/uc?export=view&id=1p9vEI7yzKvMsd_1CEnhBQlQMkr0FDglb)
 
 **Screenshot Compute Engine**
 Machine Learning Model 
