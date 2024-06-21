@@ -17,7 +17,10 @@
   
 ## 🎥 Demo
 
-Untuk melihat demo video, klik [di sini](https://drive.google.com/file/d/1S9B19gqPTu2jpnHWftmqJOvQ5mui7yKV/view?usp=drivesdk).
+[![Demo Video](https://img.youtube.com/vi/j41P4hQ7T7o/0.jpg)](https://www.youtube.com/watch?v=j41P4hQ7T7o)
+
+## 🎥 Project Presentation
+[![Presentation](https://img.youtube.com/vi/gRGeUtG18WI/0.jpg)](https://www.youtube.com/watch?v=gRGeUtG18WI)
 
 ## ✨ Key Features
 
