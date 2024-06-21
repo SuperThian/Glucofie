@@ -2,7 +2,7 @@
 
 
 
-![Glucofie Logo](https://drive.google.com/uc?export=view&id=1lsEbW4fFje8a7cPCeMvy8YwzwJLmKgVA) 
+![Glucofie Logo](https://drive.google.com/uc?export=view&id=1lsEbW4fFje8a7cPCeMvy8YwzwJLmKgVA)
 
 **Glucofie** is a revolutionary mobile application designed to help users, especially those with diabetes, monitor their nutritional intake from packaged foods and beverages. This app allows users to easily scan nutritional information from product labels and provides detailed analysis of carbohydrate, protein, sugar, and fat content, along with recommendations on whether the product is safe for consumption by diabetics.
 ### Development Team
@@ -17,7 +17,7 @@
   
 ## 🎥 Demo
 
-Untuk melihat demo video, klik [di sini](https://drive.google.com/uc?id=1S9B19gqPTu2jpnHWftmqJOvQ5mui7yKV).
+Untuk melihat demo video, klik [di sini](https://drive.google.com/file/d/1S9B19gqPTu2jpnHWftmqJOvQ5mui7yKV/view?usp=drivesdk).
 
 ## ✨ Key Features
 
